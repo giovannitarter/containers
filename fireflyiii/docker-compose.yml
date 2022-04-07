@@ -1,0 +1,39 @@
+version: "3.3"
+services:
+    
+  firefly_app:
+    container_name: fireflyiii
+    image: fireflyiii/core:latest
+    
+    volumes:
+      - firefly_iii_upload:/var/www/html/storage/upload
+    
+    env_file: .environment
+
+    ports:
+      - "3100:8080"
+    
+    #To access mysql db running on docker host
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    
+    restart: unless-stopped
+
+
+  fidi:
+    container_name: fireflyiii_importer
+    image: fireflyiii/data-importer:latest
+    env_file: .environment
+    
+    ports:
+      - 3101:8080
+    
+    depends_on:
+      - firefly_app
+    
+    restart: unless-stopped
+
+
+volumes:
+  firefly_iii_upload:
+

@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  
+  apriporta:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+
+    volumes:
+      - "./config:/mosquitto/config"
+
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+
+

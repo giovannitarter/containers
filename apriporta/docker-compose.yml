@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  
+  apriporta:
+    image: apriporta:latest
+    container_name: apriporta
+
+    env_file: 
+      - .environment
+
+    restart: always
+    network_mode: host
+
+

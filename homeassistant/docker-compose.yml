@@ -1,0 +1,19 @@
+version: "3.3"
+services:
+
+  #docker run -d --name="home-assistant" --restart unless-stopped -v /home/pupillo/hass-config:/config -v /etc/localtime:/etc/localtime:ro --net=host homeassistant/home-assistant
+
+  home-assistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant:latest
+
+    volumes:
+      - "./config:/config"
+      - "/etc/localtime:/etc/localtime:ro"
+
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+
+
