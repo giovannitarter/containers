@@ -1,0 +1,18 @@
+version: "3.4"
+services:
+
+  wetty:
+    container_name: wetty
+    image: wettyoss/wetty
+
+    ports:
+      - "3000:3000"
+
+    entrypoint:
+      - yarn
+      - start
+      - --ssh-host=192.168.2.5
+      - --base=/
+
+    restart: always
+
