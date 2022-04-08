@@ -1,4 +1,4 @@
-version: "3.3"
+version: "3.4"
 services:
 
   home-assistant:
@@ -10,10 +10,6 @@ services:
       - "/etc/localtime:/etc/localtime:ro"
 
     restart: always
-    ports:
-      - "1883:1883"
-      - "9001:9001"
-
-    #network_mode: host
+    network_mode: host
 
 

@@ -1,4 +1,4 @@
-version: "2.1"
+version: "3.4"
 services:
   unifi-controller:
     image: jacobalberty/unifi:latest
@@ -18,6 +18,6 @@ services:
       - 3478:3478/udp
       - 8080:8080
       - 10001:10001/udp
-    
+
     restart: unless-stopped
 

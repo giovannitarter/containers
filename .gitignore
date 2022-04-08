@@ -1,0 +1,6 @@
+homeassistant/config/
+mosquitto/config/
+nextcloud/nextcloud/
+unifi/data/
+unifi/log/
+
