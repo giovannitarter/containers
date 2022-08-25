@@ -5,6 +5,10 @@ services:
     container_name: wetty
     image: wettyoss/wetty
 
+    labels:
+      com.centurylinklabs.watchtower.enable: "false"
+
+
     ports:
       - "3000:3000"
 
@@ -13,6 +17,14 @@ services:
       - start
       - --ssh-host=192.168.2.5
       - --base=/
+      - --ssh-key=/key/wetty
+      - --ssh-auth=publickey
+      - --ssh-user=pupillo
+
+    volumes:
+      - type: bind
+        source: ./key
+        target: /key
 
     restart: always
 

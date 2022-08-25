@@ -3,4 +3,8 @@ mosquitto/config/
 nextcloud/nextcloud/
 unifi/data/
 unifi/log/
+wetty/key/wetty
+wetty/key/wetty.pub
+pihole/etc-pihole
+pihole/etc-dnsmasq.d
 
