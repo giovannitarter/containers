@@ -1,0 +1,18 @@
+version: "3.4"
+services:
+  uisp:
+    image: nico640/docker-unms:latest
+    container_name: uisp-controller
+    environment:
+      - TZ="Europe/Rome"
+      - PUBLIC_WS_PORT="8444"
+      #- PUBLIC_HTTPS_PORT="8444"
+
+    volumes:
+      - ./config:/config
+    ports:
+      - "8444:443"
+      - "8081:80"
+
+    restart: unless-stopped
+

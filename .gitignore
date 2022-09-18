@@ -7,4 +7,5 @@ wetty/key/wetty
 wetty/key/wetty.pub
 pihole/etc-pihole
 pihole/etc-dnsmasq.d
+uisp/config
 
